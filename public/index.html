@@ -8,17 +8,17 @@
     </head>
     <body>
         <header class="main-header">
-            <h1 class="band-name band-name-large">Hardware</h1>
+            <h1 class="band-name band-name-large">Hardware Store</h1>
         </header>
         <section class="container content-section">
             <h2 class="section-header">CPU</h2>
             <div class="shop-items">
-                <% items.music.forEach(function(item){ %>
+                <% items.cpu.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
                         <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <span class="shop-item-price">$<%= item.price %> / 100</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     </div>
@@ -28,12 +28,12 @@
         <section class="container content-section">
             <h2 class="section-header">Mainboard</h2>
             <div class="shop-items">
-                <% items.merch.forEach(function(item){ %>
+                <% items.mainboard.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
                         <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <span class="shop-item-price">$<%= item.price %> / 100</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     </div>
@@ -43,12 +43,12 @@
         <section class="container content-section">
             <h2 class="section-header">RAM</h2>
             <div class="shop-items">
-                <% items.merch.forEach(function(item){ %>
+                <% items.ram.forEach(function(item){ %>
                     <div class="shop-item" data-item-id="<%= item.id %>">
                         <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <span class="shop-item-price">$<%= item.price %> / 100</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <span class="shop-item-price">$<%= item.price %> / 100</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     </div>
