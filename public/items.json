@@ -1,0 +1,63 @@
+[
+  {
+    "type": "CPU",
+    "name": "AMD Ryzen 5",
+    "img": "./images/ryzen5.jpeg",
+    "specs":[""]
+    },
+  {
+    "type": "CPU",
+    "name": "AMD Ryzen 7",
+    "img": "./images/ryzen7.jpeg"
+    },
+  {
+    "type": "CPU",
+    "name": "AMD Ryzen 9",
+    "img": "./images/ryzen9.jpeg"
+    },
+  {
+    "type": "CPU",
+    "name": "Intel i5 2500k",
+    "img": "./images/i5.jpeg"
+    },
+  {
+    "type": "CPU",
+    "name": "Intel i7",
+    "img": "./images/i7.jpeg"
+    },
+  {
+    "type": "CPU",
+    "name": "Intel i9",
+    "img": "./images/i9.jpeg"
+    },
+  {
+    "type": "Mainboard",
+    "name": "MSI",
+    "img": "./images/mobo_msi.jpeg"
+    },
+  {
+    "type": "Mainboard",
+    "name": "MSI Mortar",
+    "img": "./images/mobo_msi_mortar.jpeg"
+    },
+  {
+    "type": "Mainboard",
+    "name": "Asus Rog",
+    "img": "./images/mobo_asus_rog.jpeg"
+    },
+  {
+    "type": "Mainboard",
+    "name": "Asus Prime 450",
+    "img": "./images/mobo_asus_prime_450.jpeg"
+    },
+  {
+    "type": "RAM",
+    "name": "",
+    "img": "./images/ryzen5.jpeg"
+    },
+  {
+    "type": "GPU",
+    "name": "",
+    "img": "./images/ryzen5.jpeg"
+    }
+]

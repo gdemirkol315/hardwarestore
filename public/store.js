@@ -29,6 +29,13 @@ function ready() {
 
 function loadItems(){
     //TODO: this will load items from json or xml file
+    'use strict';
+
+const fs = require('fs');
+
+let rawdata = fs.readFileSync('student.json');
+let student = JSON.parse(rawdata);
+console.log(student);
 }
 
 function purchaseClicked() {
