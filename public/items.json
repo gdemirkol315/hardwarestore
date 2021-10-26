@@ -1,63 +1,170 @@
 [
   {
     "type": "CPU",
+    "brand" : "AMD",
     "name": "AMD Ryzen 5",
+    "price" : "323.70",
     "img": "./images/ryzen5.jpeg",
-    "specs":[""]
+    "specs":["Processor Speed: 3.7 GHz",
+      "Processor Socket: Sockel AM4",
+      "Processor Count: 6",
+      "Wattage: 65 watts",
+      "Power Source: AC",
+      "Item Weight: 79.2 g"]
     },
   {
     "type": "CPU",
+    "brand" : "AMD",
     "name": "AMD Ryzen 7",
-    "img": "./images/ryzen7.jpeg"
+    "price" : "391.25",
+    "img": "./images/ryzen7.jpeg",
+    "specs":["Processor Speed: 3.8 GHz",
+      "Processor Socket: Sockel AM4",
+      "Processor Count: 8",
+      "Wattage: 105 watts",
+      "Power Source: AC",
+      "Item Weight: 79.2 g"]
     },
   {
     "type": "CPU",
+    "brand" : "AMD",
     "name": "AMD Ryzen 9",
-    "img": "./images/ryzen9.jpeg"
+    "price" : "593.02",
+    "img": "./images/ryzen9.jpeg",
+    "specs":["Processor Speed: 3.7 GHz",
+      "Processor Socket: Sockel AM4",
+      "Processor Count: 12",
+      "Wattage: 105 watts",
+      "Power Source: AC",
+      "Item Weight: 79.2 g"]
     },
   {
     "type": "CPU",
+    "brand" : "Intel",
     "name": "Intel i5 2500k",
-    "img": "./images/i5.jpeg"
+    "price" : "239.02",
+    "img": "./images/i5.jpeg",
+    "specs":["Processor Speed: 4.1 GHz",
+      "Processor Socket: LGA1200",
+      "Processor Count: 1",
+      "Wattage: 125 watts",
+      "Power Source: AC",
+      "Item Weight: 50 g"]
     },
   {
     "type": "CPU",
+    "brand" : "Intel",
     "name": "Intel i7",
-    "img": "./images/i7.jpeg"
+    "price" : "320.77",
+    "img": "./images/i7.jpeg",
+    "specs":["Processor Speed: 3.6 GHz",
+      "Processor Socket: LGA1200",
+      "Processor Count: 8",
+      "Wattage: 125 watts",
+      "Power Source: AC",
+      "Item Weight: 10 g"]
     },
   {
     "type": "CPU",
+    "brand" : "Intel",
     "name": "Intel i9",
-    "img": "./images/i9.jpeg"
+    "price" : "334.97",
+    "img": "./images/i9.jpeg",
+    "specs":["Processor Speed: 5 GHz",
+      "Processor Socket: LGA1151",
+      "Processor Count: 8",
+      "Wattage: 95 watts",
+      "Power Source: AC",
+      "Item Weight: 32 g"]
     },
   {
     "type": "Mainboard",
+    "brand" : "MSI",
     "name": "MSI",
-    "img": "./images/mobo_msi.jpeg"
+    "price" : "114.02",
+    "img": "./images/mobo_msi.jpeg",
+    "specs":["Product Dimensions: 30.5 x 24.5 x 3 cm",
+      "Item model number: 7C56-003R",
+      "Processor Socket: Sockel AM4",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 64GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 4400 MHz",
+      "Wattage:120 watts"]
     },
   {
     "type": "Mainboard",
+    "brand" : "MSI",
     "name": "MSI Mortar",
-    "img": "./images/mobo_msi_mortar.jpeg"
+    "price" : "90.02",
+    "img": "./images/mobo_msi_mortar.jpeg",
+    "specs":["Product Dimensions: 24.38 x 24.38 x 5.08 cm",
+      "Item model number: B450MPM2MAX",
+      "Processor Socket: Sockel AM4",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 32GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 2133 MHz",
+      "Wattage:125 watts"]
     },
   {
     "type": "Mainboard",
+    "brand" : "ASUS",
     "name": "Asus Rog",
-    "img": "./images/mobo_asus_rog.jpeg"
+    "price" : "346.00",
+    "img": "./images/mobo_asus_rog.jpeg",
+    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
+      "Item model number: MB ASUS ROG STRIX Z590-E",
+      "Processor Socket: LGA 1200",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 128GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 5333 MHz",
+      "Wattage:110 watts"]
     },
   {
     "type": "Mainboard",
+    "brand" : "ASUS",
     "name": "Asus Prime 450",
-    "img": "./images/mobo_asus_prime_450.jpeg"
+    "price" : "260.50",
+    "img": "./images/mobo_asus_prime_450.jpeg",
+    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
+      "Item model number: PRIME Z590-A",
+      "Processor Socket: LGA 1200",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 128GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 5500 MHz",
+      "Wattage:130 watts"]
     },
   {
     "type": "RAM",
+    "brand" : "AMD",
     "name": "",
-    "img": "./images/ryzen5.jpeg"
+    "price" : "593.02",
+    "img": "./images/ryzen5.jpeg",
+    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
+      "Item model number: PRIME Z590-A",
+      "Processor Socket: LGA 1200",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 128GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 5500 MHz",
+      "Wattage:130 watts"]
     },
   {
     "type": "GPU",
+    "brand" : "AMD",
     "name": "",
-    "img": "./images/ryzen5.jpeg"
+    "price" : "593.02",
+    "img": "./images/ryzen5.jpeg",
+    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
+      "Item model number: PRIME Z590-A",
+      "Processor Socket: LGA 1200",
+      "Memory Technology: DDR4",
+      "Maximum Memory Supported: 128GB",
+      "Graphics Card Interface: PCI-Express x16",
+      "Memory Clock Speed: 5500 MHz",
+      "Wattage:130 watts"]
     }
 ]

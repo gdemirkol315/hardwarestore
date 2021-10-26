@@ -28,14 +28,17 @@ function ready() {
 }
 
 function loadItems(){
-    //TODO: this will load items from json or xml file
+
+    var items = parseJson();
+
+}
+
+function parseJson(){
     'use strict';
+    const fs = require('fs');
+    const itemsJson = fs.readFileSync('items.json');
+    return JSON.parse(itemsJson);
 
-const fs = require('fs');
-
-let rawdata = fs.readFileSync('student.json');
-let student = JSON.parse(rawdata);
-console.log(student);
 }
 
 function purchaseClicked() {
