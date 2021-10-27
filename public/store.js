@@ -49,8 +49,8 @@ function addItemsToCategory(key, items){
 
     var categorySection = document.createElement("section")
     categorySection.id = key.value
-    categorySection.className ='shop-category'
-    categorySection.innerHTML = `<h2>${key.value}</h2>`
+    categorySection.className ='container-content-section'
+    categorySection.innerHTML = `<h2 class="section-header">${key.value}</h2>`
     items.forEach((item) => {
         if(item.type == key.value){
             var itemDiv = document.createElement("div")
@@ -61,7 +61,7 @@ function addItemsToCategory(key, items){
                         <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                         <div class="shop-item-details">
                             <span class="currency">&#x20AC; </span>
-                            <span class="shop-item-price">${Math.round(item.price)}</span>
+                            <span class="shop-item-price">${Math.round(item.price * 100)/100}</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     `
