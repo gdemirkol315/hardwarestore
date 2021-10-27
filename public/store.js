@@ -16,22 +16,22 @@ function addListeners() {
         input.addEventListener('change', quantityChanged)
     }
 
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+//    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-function loadItems(){
+function loadItems() {
     console.log('starting parse json')
 
     fetch('items.json')
-        .then(response=> response.json())
+        .then(response => response.json())
         .then(data => {
             addItemsToPage(data)
         })
 }
 
-function addItemsToPage(items){
+function addItemsToPage(items) {
 
-    var itemsDiv = document.getElementById("items")
+    var itemsDiv = document.getElementById("accordion")
     var categories = new Map()
 
     items.forEach((item) => {
@@ -39,21 +39,44 @@ function addItemsToPage(items){
     })
 
     var categoryIter = categories.keys()
-    for(var i =0; i < categories.size; i++){
-        var categorySection = addItemsToCategory(categoryIter.next(),items)
+    for (var i = 0; i < categories.size; i++) {
+        var categorySection = addItemsToCategory(categoryIter.next(), items)
         itemsDiv.appendChild(categorySection)
     }
 
 }
 
-function addItemsToCategory(key, items){
+function addItemsToCategory(key, items) {
+    // <button type="button" className="btn btn-info" data-toggle="collapse" data-target="#demo">Simple
+    //     collapsible</button>
+    var categoryCard = document.createElement('div')
+    categoryCard.className = 'card'
 
-    var categorySection = document.createElement("section")
-    categorySection.id = key.value
-    categorySection.className ='container-content-section'
-    categorySection.innerHTML = `<h2 class="section-header">${key.value}</h2>`
+    var categoryButtonHeading = document.createElement('div')
+
+    var categoryCollapse = document.createElement('div')
+    categoryCollapse.id = key.value + '-collapse'
+    categoryCollapse.className = 'collapse'
+    categoryCollapse.dataParent = '#accordion'
+
+
+    var categoryCollapseBody = document.createElement('div')
+    categoryCollapseBody.className = 'card-body'
+    categoryButtonHeading.className = 'card-header'
+    categoryButtonHeading.id = key.value + '-header'
+
+    categoryButtonHeading.innerHTML =
+        `  <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#${categoryCollapse.id}">
+                    ${key.value}
+                </button>
+            </h5>
+        `
+
+    categoryCard.appendChild(categoryButtonHeading)
+
     items.forEach((item) => {
-        if(item.type == key.value){
+        if (item.type == key.value) {
             var itemDiv = document.createElement("div")
             itemDiv.className = 'shop-item'
             itemDiv.id = item.type + '-' + item.brand + '-' + item.name
@@ -62,20 +85,23 @@ function addItemsToCategory(key, items){
                         <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                         <div class="shop-item-details">
                             <span class="currency">&#x20AC; </span>
-                            <span class="shop-item-price">${Math.round(item.price * 100)/100}</span>
+                            <span class="shop-item-price">${Math.round(item.price * 100) / 100}</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     `
-            categorySection.appendChild(itemDiv)
+            categoryCollapseBody.appendChild(itemDiv)
 
-            var addToCartButtons = categorySection.getElementsByClassName('shop-item-button')
+            var addToCartButtons = categoryCollapse.getElementsByClassName('shop-item-button')
             for (var i = 0; i < addToCartButtons.length; i++) {
                 var button = addToCartButtons[i]
                 button.addEventListener('click', addToCartClicked)
             }
+
         }
     })
-    return categorySection
+    categoryCollapse.appendChild(categoryCollapseBody)
+    categoryCard.appendChild(categoryCollapse)
+    return categoryCard
 }
 
 function purchaseClicked() {
@@ -123,7 +149,7 @@ function addItemToCart(title, price, imageSrc, id) {
             return
         }
     }
-    cartRow.innerHTML =  `
+    cartRow.innerHTML = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100" alt="${id}">
             <span class="cart-item-title">${title}</span>

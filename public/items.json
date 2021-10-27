@@ -136,35 +136,5 @@
       "Graphics Card Interface: PCI-Express x16",
       "Memory Clock Speed: 5500 MHz",
       "Wattage:130 watts"]
-    },
-  {
-    "type": "RAM",
-    "brand" : "AMD",
-    "name": "",
-    "price" : "593.02",
-    "img": "./images/ryzen5.jpg",
-    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
-      "Item model number: PRIME Z590-A",
-      "Processor Socket: LGA 1200",
-      "Memory Technology: DDR4",
-      "Maximum Memory Supported: 128GB",
-      "Graphics Card Interface: PCI-Express x16",
-      "Memory Clock Speed: 5500 MHz",
-      "Wattage:130 watts"]
-    },
-  {
-    "type": "GPU",
-    "brand" : "AMD",
-    "name": "",
-    "price" : "593.02",
-    "img": "./images/ryzen5.jpg",
-    "specs":["Product Dimensions: 30.5 x 24.5 x 6 cm",
-      "Item model number: PRIME Z590-A",
-      "Processor Socket: LGA 1200",
-      "Memory Technology: DDR4",
-      "Maximum Memory Supported: 128GB",
-      "Graphics Card Interface: PCI-Express x16",
-      "Memory Clock Speed: 5500 MHz",
-      "Wattage:130 watts"]
     }
 ]
