@@ -27,18 +27,35 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-function loadItems(){
-
+async function loadItems(){
+    console.log('starting loaditems')
+    var mainHead = document.getElementsByClassName('main-header');
     var items = parseJson();
+    for (const item of items){
+        console.log(item)
+        // var itemTmp = document.createElement('div');
+        // itemTmp.id = item.brand + item.name;
+        // insertAfter(itemTmp,mainHead);
+    }
 
 }
 
-function parseJson(){
-    'use strict';
-    const fs = require('fs');
-    const itemsJson = fs.readFileSync('items.json');
-    return JSON.parse(itemsJson);
+function insertAfter(newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}
 
+async function parseJson(){
+    // 'use strict';
+    // var fs = require(['fs']);
+    // var itemsJson = fs.readFileSync('./items.json');
+    // return JSON.parse(itemsJson);
+    var items = [];
+    fetch("items.json")
+        .then(response=> response.json())
+        .then(data => {
+           items.push(data)
+        })
+    return items
 }
 
 function purchaseClicked() {

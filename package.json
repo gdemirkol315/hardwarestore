@@ -14,7 +14,11 @@
     "browser-sync": "^2.27.5",
     "nodemon": "^2.0.4"
   },
+  "files": [
+    "./public/items.json"
+  ],
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
   }
 }
