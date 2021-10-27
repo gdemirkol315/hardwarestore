@@ -1,11 +1,8 @@
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
-} else {
-    ready()
-}
+loadItems()
+document.onload = addListeners()
 
-function ready() {
-    loadItems()
+
+function addListeners() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -18,25 +15,17 @@ function ready() {
         input.addEventListener('change', quantityChanged)
     }
 
-    var addToCartButtons = document.getElementsByClassName('shop-item-button')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
-    }
-
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
 function loadItems(){
     console.log('starting parse json')
-    var items = [];
+
     fetch('items.json')
         .then(response=> response.json())
         .then(data => {
             addItemsToPage(data)
         })
-    return items
-
 }
 
 function addItemsToPage(items){
@@ -67,16 +56,22 @@ function addItemsToCategory(key, items){
             var itemDiv = document.createElement("div")
             itemDiv.className = 'shop-item'
             itemDiv.id = item.type + '-' + item.brand + '-' + item.name
-            var itemInner = `
+            itemDiv.innerHTML = `
                         <span class="shop-item-title">${item.name}</span>
-                        <img class="shop-item-image" src="${item.img}">
+                        <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                         <div class="shop-item-details">
-                            <span class="shop-item-price">&#x20AC; ${Math.round(item.price)}</span>
+                            <span class="currency">&#x20AC; </span>
+                            <span class="shop-item-price">${Math.round(item.price)}</span>
                             <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
                     `
-            itemDiv.innerHTML = itemInner
             categorySection.appendChild(itemDiv)
+
+            var addToCartButtons = categorySection.getElementsByClassName('shop-item-button')
+            for (var i = 0; i < addToCartButtons.length; i++) {
+                var button = addToCartButtons[i]
+                button.addEventListener('click', addToCartClicked)
+            }
         }
     })
     return categorySection
@@ -127,9 +122,9 @@ function addItemToCart(title, price, imageSrc, id) {
             return
         }
     }
-    var cartRowContents = `
+    cartRow.innerHTML =  `
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100" alt="${id}">
             <span class="cart-item-title">${title}</span>
         </div>
         <span class="cart-price cart-column">${price}</span>
@@ -137,7 +132,6 @@ function addItemToCart(title, price, imageSrc, id) {
             <input class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">REMOVE</button>
         </div>`
-    cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
