@@ -28,17 +28,58 @@ function ready() {
 }
 
 function loadItems(){
-
-    var items = parseJson();
+    console.log('starting parse json')
+    var items = [];
+    fetch('items.json')
+        .then(response=> response.json())
+        .then(data => {
+            addItemsToPage(data)
+        })
+    return items
 
 }
 
-function parseJson(){
-    'use strict';
-    const fs = require('fs');
-    const itemsJson = fs.readFileSync('items.json');
-    return JSON.parse(itemsJson);
+function addItemsToPage(items){
 
+    var itemsDiv = document.getElementById("items")
+    var categories = new Map()
+
+    items.forEach((item) => {
+        categories.set(item.type)
+    })
+
+    var categoryIter = categories.keys()
+    for(var i =0; i < categories.size; i++){
+        var categorySection = addItemsToCategory(categoryIter.next(),items)
+        itemsDiv.appendChild(categorySection)
+    }
+
+}
+
+function addItemsToCategory(key, items){
+
+    var categorySection = document.createElement("section")
+    categorySection.id = key.value
+    categorySection.className ='shop-category'
+    categorySection.innerHTML = `<h2>${key.value}</h2>`
+    items.forEach((item) => {
+        if(item.type == key.value){
+            var itemDiv = document.createElement("div")
+            itemDiv.className = 'shop-item'
+            itemDiv.id = item.type + '-' + item.brand + '-' + item.name
+            var itemInner = `
+                        <span class="shop-item-title">${item.name}</span>
+                        <img class="shop-item-image" src="${item.img}">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">&#x20AC; ${Math.round(item.price)}</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    `
+            itemDiv.innerHTML = itemInner
+            categorySection.appendChild(itemDiv)
+        }
+    })
+    return categorySection
 }
 
 function purchaseClicked() {
