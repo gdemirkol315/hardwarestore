@@ -1,3 +1,4 @@
+//TODO: for product details https://getbootstrap.com/docs/4.0/components/collapse/
 loadItems()
 document.onload = addListeners()
 
