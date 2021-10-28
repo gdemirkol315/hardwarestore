@@ -86,16 +86,16 @@ function addItemsToCategory(key, items) {
                         <div class="shop-item-details">
                             <span class="currency">&#x20AC; </span>
                             <span class="shop-item-price">${Math.round(item.price * 100) / 100}</span>
-                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                            <button class="btn btn-primary shop-item-button" type="button" onclick="addToCartClicked(\'`+itemDiv.id+`\')">ADD TO CART</button>
                         </div>
                     `
             categoryCollapseBody.appendChild(itemDiv)
 
-            var addToCartButtons = categoryCollapse.getElementsByClassName('shop-item-button')
+            /*var addToCartButtons = categoryCollapse.getElementsByClassName('shop-item-button')
             for (var i = 0; i < addToCartButtons.length; i++) {
                 var button = addToCartButtons[i]
                 button.addEventListener('click', addToCartClicked)
-            }
+            }*/
 
         }
     })
@@ -126,14 +126,14 @@ function quantityChanged(event) {
     updateCartTotal()
 }
 
-function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
+function addToCartClicked(id) {
+
+    var shopItem = document.getElementById(id)
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    var id = shopItem.dataset.itemId
-    addItemToCart(title, price, imageSrc, id)
+    var id2 = shopItem.dataset.itemId
+    addItemToCart(title, price, imageSrc, id2)
     updateCartTotal()
 }
 
