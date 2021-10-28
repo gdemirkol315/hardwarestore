@@ -61,8 +61,8 @@ function addItemsToCategory(key, items) {
 
 
     var categoryCollapseBody = document.createElement('div')
-    categoryCollapseBody.className = 'card-body'
-    categoryButtonHeading.className = 'card-header'
+    categoryCollapseBody.className = 'card-body row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'
+    categoryButtonHeading.className = 'card-title'
     categoryButtonHeading.id = key.value + '-header'
 
     categoryButtonHeading.innerHTML =
@@ -81,12 +81,18 @@ function addItemsToCategory(key, items) {
             itemDiv.className = 'shop-item'
             itemDiv.id = item.type + '-' + item.brand + '-' + item.name
             itemDiv.innerHTML = `
-                        <span class="shop-item-title">${item.name}</span>
                         <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
-                        <div class="shop-item-details">
-                            <span class="currency">&#x20AC; </span>
-                            <span class="shop-item-price">${Math.round(item.price * 100) / 100}</span>
-                            <button class="btn btn-primary shop-item-button" type="button" onclick="addToCartClicked(\'`+itemDiv.id+`\')">ADD TO CART</button>
+                        <div class="card card-item">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><h1 class="shop-item-title">${item.name}</h1></li>
+                                <li class="list-group-item">
+                                    ${formatSpecs(item.specs)}    
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="shop-item-price card-text">&#x20AC; ${Math.round(item.price * 100) / 100}</span>
+                                    <button class="btn btn-primary shop-item-button" type="button" onclick="addToCartClicked(\'`+itemDiv.id+`\')">ADD TO CART</button>
+                                </li>
+                            </ul>
                         </div>
                     `
             categoryCollapseBody.appendChild(itemDiv)
@@ -104,6 +110,13 @@ function addItemsToCategory(key, items) {
     return categoryCard
 }
 
+function formatSpecs(specsStr){
+    result =''
+    specsStr.forEach((spec) => {
+        result = result + '\n' + spec
+    })
+    return result
+}
 function purchaseClicked() {
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
