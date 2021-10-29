@@ -5,3 +5,6 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /.idea/
+.suo
+slnx.sqlite
+VSWorkspaceState.json
