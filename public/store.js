@@ -1,4 +1,4 @@
-//TODO: for product details https://getbootstrap.com/docs/4.0/components/collapse/
+
 loadItems()
 document.onload = addListeners()
 
@@ -16,13 +16,12 @@ function addListeners() {
         input.addEventListener('change', quantityChanged)
     }
 
-//    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
 function loadItems() {
     console.log('starting parse json')
 
-    fetch('items.json')
+    fetch('https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/items.json')
         .then(response => response.json())
         .then(data => {
             addItemsToPage(data)
@@ -47,8 +46,7 @@ function addItemsToPage(items) {
 }
 
 function addItemsToCategory(key, items) {
-    // <button type="button" className="btn btn-info" data-toggle="collapse" data-target="#demo">Simple
-    //     collapsible</button>
+
     var categoryCard = document.createElement('div')
     categoryCard.className = 'card'
 
@@ -61,7 +59,8 @@ function addItemsToCategory(key, items) {
 
 
     var categoryCollapseBody = document.createElement('div')
-    categoryCollapseBody.className = 'card-body row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'
+    categoryCollapseBody.className = 'card-body category ' +
+        'row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'
     categoryButtonHeading.className = 'card-title'
     categoryButtonHeading.id = key.value + '-header'
 
@@ -89,19 +88,13 @@ function addItemsToCategory(key, items) {
                                     ${formatSpecs(item.specs)}    
                                 </li>
                                 <li class="list-group-item">
-                                    <span class="shop-item-price card-text">&#x20AC; ${Math.round(item.price * 100) / 100}</span>
+                                    <span class="shop-item-price card-text">$ ${Math.round(item.price * 100) / 100}</span>
                                     <button class="btn btn-primary shop-item-button" type="button" onclick="addToCartClicked(\'`+itemDiv.id+`\')">ADD TO CART</button>
                                 </li>
                             </ul>
                         </div>
                     `
             categoryCollapseBody.appendChild(itemDiv)
-
-            /*var addToCartButtons = categoryCollapse.getElementsByClassName('shop-item-button')
-            for (var i = 0; i < addToCartButtons.length; i++) {
-                var button = addToCartButtons[i]
-                button.addEventListener('click', addToCartClicked)
-            }*/
 
         }
     })
@@ -116,13 +109,6 @@ function formatSpecs(specsStr){
         result = result + '\n' + spec
     })
     return result
-}
-function purchaseClicked() {
-    var priceElement = document.getElementsByClassName('cart-total-price')[0]
-    var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
-    stripeHandler.open({
-        amount: price
-    })
 }
 
 function removeCartItem(event) {
