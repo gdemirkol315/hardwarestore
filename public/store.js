@@ -78,14 +78,14 @@ function addItemsToCategory(key, items) {
         if (item.type == key.value) {
             var itemDiv = document.createElement("div")
             itemDiv.className = 'shop-item'
-            itemDiv.id = item.type + '-' + item.brand + '-' + item.name
+            itemDiv.id = (item.type + '-' + item.brand + '-' + item.name).replaceAll(' ','')
             itemDiv.innerHTML = `
                         <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                         <div class="card card-item">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><h1 class="shop-item-title">${item.name}</h1></li>
                                 <li class="list-group-item">
-                                    ${formatSpecs(item.specs)}    
+                                    ${technicalDetailsButton(item.specs,itemDiv.id)}  
                                 </li>
                                 <li class="list-group-item">
                                     <span class="shop-item-price card-text">$ ${Math.round(item.price * 100) / 100}</span>
@@ -101,6 +101,18 @@ function addItemsToCategory(key, items) {
     categoryCollapse.appendChild(categoryCollapseBody)
     categoryCard.appendChild(categoryCollapse)
     return categoryCard
+}
+function technicalDetailsButton(specs, itemId){
+    return `<div class="card-title-details-${itemId}">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#details-${itemId}">
+                Technical Details
+                </button>
+            </h5>
+        </div>
+        <div id="details-${itemId}" class="collapse">
+            ${formatSpecs(specs)}    
+        </div>`
 }
 
 function formatSpecs(specsStr){
