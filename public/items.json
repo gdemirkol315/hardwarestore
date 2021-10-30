@@ -80,7 +80,7 @@
   {
     "type": "GPU",
     "brand" : "Hyuduo",
-    "name": "Graphics Card PCI Express 3.0 Graphics Card High Performance 128 Bit 1G DDR5 Desktop Computer Graphics Card 780MHz GTX1050Ti",
+    "name": "Hyuduo Graphics Card GTX1050Ti",
     "price" : "115.97",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/hyuduo.jpg",
     "specs":["Core bit width: 128 bit",
