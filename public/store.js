@@ -19,7 +19,6 @@ function addListeners() {
 }
 
 function loadItems() {
-    console.log('starting parse json')
 
     fetch('https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/items.json')
         .then(response => response.json())
@@ -43,6 +42,22 @@ function addItemsToPage(items) {
         itemsDiv.appendChild(categorySection)
     }
 
+    activatePopOver()
+}
+
+function activatePopOver() {
+    $('[data-toggle="popover"]').popover();
+    setPopOverFadeOut()
+}
+
+function setPopOverFadeOut(){
+    $('[data-toggle="popover"]').click(function () {
+        setTimeout(function () {
+            $('.popover').fadeOut('slow');
+        }, 2000);
+        document.body.addEventListener('click', $('.popover').fadeIn());
+
+    });
 }
 
 function addItemsToCategory(key, items) {
@@ -88,8 +103,11 @@ function addItemsToCategory(key, items) {
                                     ${technicalDetailsButton(item.specs,itemDiv.id)}  
                                 </li>
                                 <li class="list-group-item">
-                                    <span class="shop-item-price card-text">$ ${Math.round(item.price * 100) / 100}</span>
-                                    <button class="btn btn-primary shop-item-button" type="button" onclick="addToCartClicked(\'`+itemDiv.id+`\')">ADD TO CART</button>
+                                    <span class="shop-item-price">$ ${Math.round(item.price * 100) / 100}</span>
+                                    <button class="btn btn-primary" type="button" 
+                                    onclick="addToCartClicked(\'`+itemDiv.id+`\')"
+                                    data-toggle="popover" data-content="Item added to shopping cart"
+                                    data-placement="bottom" data-trigger="focus">ADD TO CART</button>
                                 </li>
                             </ul>
                         </div>
@@ -156,7 +174,7 @@ function addItemToCart(title, price, imageSrc, id) {
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
-            alert('This item is already added to the cart')
+            cartItemNames[i].parentElement.parentElement.getElementsByClassName("cart-quantity-input")[0].value++
             return
         }
     }
