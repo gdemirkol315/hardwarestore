@@ -1,6 +1,6 @@
 [
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "AMD",
     "name": "AMD Ryzen 5",
     "price" : "323.70",
@@ -13,7 +13,7 @@
       "Item Weight: 79.2 g"]
     },
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "AMD",
     "name": "AMD Ryzen 7",
     "price" : "391.25",
@@ -26,7 +26,7 @@
       "Item Weight: 79.2 g"]
     },
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "AMD",
     "name": "AMD Ryzen 9",
     "price" : "593.02",
@@ -39,7 +39,7 @@
       "Item Weight: 79.2 g"]
     },
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "Intel",
     "name": "Intel i5 2500k",
     "price" : "239.02",
@@ -52,7 +52,7 @@
       "Item Weight: 50 g"]
     },
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "Intel",
     "name": "Intel i7",
     "price" : "320.77",
@@ -65,7 +65,7 @@
       "Item Weight: 10 g"]
     },
   {
-    "type": "CPU",
+    "type": "CPUs",
     "brand" : "Intel",
     "name": "Intel i9",
     "price" : "334.97",
@@ -78,7 +78,7 @@
       "Item Weight: 32 g"]
     },
   {
-    "type": "GPU",
+    "type": "GPUs",
     "brand" : "Hyuduo",
     "name": "Hyuduo Graphics Card GTX1050Ti",
     "price" : "115.97",
@@ -95,7 +95,7 @@
       "Stream processor unit: 192 (units)"]
     },
   {
-    "type": "GPU",
+    "type": "GPUs",
     "brand" : "Asus",
     "name": "ASUS Graphics Card 2GB",
     "price" : "103.59",
@@ -112,7 +112,7 @@
       "Stream processor unit: 192 (units)"]
     },
   {
-    "type": "GPU",
+    "type": "GPUs",
     "brand" : "Asus",
     "name": "ASUS Dual NVIDIA GEFORCE RTX 3060 TI V2 Mini 8GB GDDR6 Gaming",
     "price" : "729.90",
@@ -129,7 +129,7 @@
       "Wattage: 750 Watts"]
   },
   {
-    "type": "Mainboard",
+    "type": "Mainboards",
     "brand" : "ASUS",
     "name": "Asus Rog",
     "price" : "346.00",
@@ -144,7 +144,7 @@
       "Wattage:110 watts"]
   },
   {
-    "type": "Mainboard",
+    "type": "Mainboards",
     "brand" : "MSI",
     "name": "MSI",
     "price" : "114.02",
@@ -159,7 +159,7 @@
       "Wattage:120 watts"]
     },
   {
-    "type": "Mainboard",
+    "type": "Mainboards",
     "brand" : "MSI",
     "name": "MSI Mortar",
     "price" : "90.02",
@@ -174,7 +174,7 @@
       "Wattage:125 watts"]
     },
   {
-    "type": "Mainboard",
+    "type": "Mainboards",
     "brand" : "ASUS",
     "name": "Asus Prime 450",
     "price" : "260.50",
@@ -189,7 +189,7 @@
       "Wattage:130 watts"]
     },
   {
-    "type": "RAM",
+    "type": "RAMs",
     "brand" : "Ballistix",
     "name": "Ballistix Desktop Gaming Memory Kit 16",
     "price" : "76.72",
@@ -202,7 +202,7 @@
       "Item weight:15 g"]
   },
   {
-    "type": "RAM",
+    "type": "RAMs",
     "brand" : "Crucial",
     "name": "Crucial CT8G4DFD824A 8GB Memory",
     "price" : "31.72",
@@ -215,7 +215,7 @@
       "Item weight:13.6 g"]
   },
   {
-    "type": "RAM",
+    "type": "RAMs",
     "brand" : "Corsair",
     "name": "Corsair VENGEANCE RGB PRO SL 16GB (2x8GB)",
     "price" : "84.60",
@@ -228,7 +228,7 @@
       "Item weight:124 g"]
   },
   {
-    "type": "RAM",
+    "type": "RAMs",
     "brand" : "Corsair",
     "name": "Corsair VENGEANCE RGB PRO SL 32GB (2x16GB)",
     "price" : "152.18",
@@ -241,7 +241,7 @@
       "Item weight:124 g"]
   },
   {
-    "type": "RAM",
+    "type": "RAMs",
     "brand" : "Corsair",
     "name": "Corsair VENGEANCE RGB PRO SL 32GB (4x8GB)",
     "price" : "188.47",
@@ -254,7 +254,7 @@
       "Item weight:124 g"]
   },
   {
-    "type": "PowerSupply",
+    "type": "Power Supplies",
     "brand" : "Thermaltake",
     "name": "Thermaltake Smart RGB 700W PC Power Supply (80Plus Certified, ATX)",
     "price" : "58.19",
@@ -267,7 +267,7 @@
       ]
   },
   {
-    "type": "Power Supply",
+    "type": "Power Supplies",
     "brand" : "Be Quiet",
     "name": "Be Quiet Straight Power 11 Power Supply, Black 750W",
     "price" : "117.34",
@@ -280,7 +280,7 @@
       ]
   },
   {
-    "type": "Power Supply",
+    "type": "Power Supplies",
     "brand" : "Mars Gaming",
     "name": "Mars Gaming MPB550, PC power supply 550W, 80Plus bronze 230V, silent",
     "price" : "34.34",
