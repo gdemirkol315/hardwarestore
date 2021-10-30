@@ -54,7 +54,7 @@ function setPopOverFadeOut(){
     $('[data-toggle="popover"]').click(function () {
         setTimeout(function () {
             $('.popover').fadeOut('slow');
-        }, 2000);
+        }, 1000);
         document.body.addEventListener('click', $('.popover').fadeIn());
 
     });
@@ -99,7 +99,10 @@ function addItemsToCategory(key, items) {
                         <div class="card card-item">
                         <img class="card-img-top mx-auto shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><h1 class="shop-item-title">${item.name}</h1></li>
+                                <li class="list-group-item">
+                                    <h1 class="shop-item-title">${item.name}</h1>
+                                    <p class="text-center">Brand: ${item.brand}</p>
+                                </li>
                                 <li class="list-group-item">
                                     ${technicalDetailsButton(item.specs,itemDiv.id)}  
                                 </li>
