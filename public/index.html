@@ -7,7 +7,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="store.js" ></script>
         <link rel ="stylesheet" href="styles.css">
     </head>
     <body>
@@ -23,7 +22,7 @@
         </header>
         <div id="accordion">
         </div>
-        <section id="shopping-cart" class="container content-section">
+        <div id="shopping-cart" class="main-header">
             <h2 class="section-header">CART</h2>
             <div class="cart-row">
                 <span class="cart-item cart-header cart-column">ITEM</span>
@@ -37,11 +36,7 @@
                 <span class="cart-total-price">$0</span>
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-        </section>
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <h3 class="band-name">Hardware Store</h3>
-            </div>
-        </footer>
+        </div>
     </body>
+    <script src="store.js" ></script>
 </html>

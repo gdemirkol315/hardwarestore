@@ -1,6 +1,35 @@
 
 loadItems()
 document.onload = addListeners()
+document.onload = fixHeader()
+
+function fixHeader(){
+    window.onscroll = function() {myFunction()};
+
+    var header = document.getElementsByClassName("main-header")[0];
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        var element = document.querySelector('#shopping-cart');
+        var position = element.getBoundingClientRect();
+        var gotoCartButton = document.getElementById("gotocart")
+        // checking whether fully visible
+        if(!(position.top >= 0 && position.bottom <= window.innerHeight) && !(position.top < window.innerHeight && position.bottom >= 0)) {
+            gotoCartButton.style.display = "block";
+        } else {
+            gotoCartButton.style.display = "none";
+        }
+
+    });
+}
 
 
 function addListeners() {
