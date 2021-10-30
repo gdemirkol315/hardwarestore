@@ -254,7 +254,7 @@
       "Item weight:124 g"]
   },
   {
-    "type": "Power Supply",
+    "type": "PowerSupply",
     "brand" : "Thermaltake",
     "name": "Thermaltake Smart RGB 700W PC Power Supply (80Plus Certified, ATX)",
     "price" : "58.19",
