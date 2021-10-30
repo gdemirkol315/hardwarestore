@@ -68,7 +68,7 @@ function addItemsToCategory(key, items) {
     var categoryButtonHeading = document.createElement('div')
 
     var categoryCollapse = document.createElement('div')
-    categoryCollapse.id = key.value + '-collapse'
+    categoryCollapse.id = key.value.replaceAll(' ','') + '-collapse'
     categoryCollapse.className = 'collapse'
     categoryCollapse.dataParent = '#accordion'
 
@@ -77,7 +77,7 @@ function addItemsToCategory(key, items) {
     categoryCollapseBody.className = 'card-body category ' +
         'row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'
     categoryButtonHeading.className = 'card-title'
-    categoryButtonHeading.id = key.value + '-header'
+    categoryButtonHeading.id = key.value.replaceAll(' ','') + '-header'
 
     categoryButtonHeading.innerHTML =
         `  <h5 class="mb-0">
@@ -93,7 +93,7 @@ function addItemsToCategory(key, items) {
         if (item.type == key.value) {
             var itemDiv = document.createElement("div")
             itemDiv.className = 'shop-item'
-            itemDiv.id = (item.type + '-' + item.brand + '-' + item.name).replaceAll(' ','')
+            itemDiv.id = (item.type.replaceAll(' ','') + '-' + item.brand + '-' + item.name).replaceAll(' ','')
             itemDiv.innerHTML = `
                         <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                         <div class="card card-item">
