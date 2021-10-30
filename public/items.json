@@ -80,7 +80,7 @@
   {
     "type": "GPUs",
     "brand" : "Hyuduo",
-    "name": "Hyuduo Graphics Card GTX1050Ti",
+    "name": "Hyuduo 1GB",
     "price" : "115.97",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/hyuduo.jpg",
     "specs":["Core bit width: 128 bit",
@@ -97,7 +97,7 @@
   {
     "type": "GPUs",
     "brand" : "Asus",
-    "name": "ASUS Graphics Card 2GB",
+    "name": "ASUS 2GB",
     "price" : "103.59",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/gpu_asus.jpg",
     "specs":[
@@ -114,7 +114,7 @@
   {
     "type": "GPUs",
     "brand" : "Asus",
-    "name": "ASUS Dual NVIDIA GEFORCE RTX 3060 TI V2 Mini 8GB GDDR6 Gaming",
+    "name": "ASUS Dual 8GB",
     "price" : "729.90",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/asus_rtx.jpg",
     "specs":["Core bit width: 256 bit",
@@ -191,7 +191,7 @@
   {
     "type": "RAMs",
     "brand" : "Ballistix",
-    "name": "Ballistix Desktop Gaming Memory Kit 16",
+    "name": "Ballistix 8GBx2",
     "price" : "76.72",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/ballistix.jpg",
     "specs":["Product Dimensions: 13.33 x 0.72 x 3.92 cm",
@@ -204,7 +204,7 @@
   {
     "type": "RAMs",
     "brand" : "Crucial",
-    "name": "Crucial CT8G4DFD824A 8GB Memory",
+    "name": "Crucial 8GB",
     "price" : "31.72",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/crucial.jpg",
     "specs":["Product Dimensions: 13.39 x 0.08 x 3.12 cm",
@@ -217,7 +217,7 @@
   {
     "type": "RAMs",
     "brand" : "Corsair",
-    "name": "Corsair VENGEANCE RGB PRO SL 16GB (2x8GB)",
+    "name": "Corsair 8GBx2",
     "price" : "84.60",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/corsair.jpg",
     "specs":["Product Dimensions: 13.83 x 0.75 x 4.48 cm",
@@ -230,7 +230,7 @@
   {
     "type": "RAMs",
     "brand" : "Corsair",
-    "name": "Corsair VENGEANCE RGB PRO SL 32GB (2x16GB)",
+    "name": "Corsair 16GBx2",
     "price" : "152.18",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/corsair.jpg",
     "specs":["Product Dimensions: 13.83 x 0.75 x 4.48 cm",
@@ -243,7 +243,7 @@
   {
     "type": "RAMs",
     "brand" : "Corsair",
-    "name": "Corsair VENGEANCE RGB PRO SL 32GB (4x8GB)",
+    "name": "Corsair 8GBx4",
     "price" : "188.47",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/corsair.jpg",
     "specs":["Product Dimensions: 13.83 x 0.75 x 4.48 cm",
@@ -256,7 +256,7 @@
   {
     "type": "Power Supplies",
     "brand" : "Thermaltake",
-    "name": "Thermaltake Smart RGB 700W PC Power Supply (80Plus Certified, ATX)",
+    "name": "Thermaltake 700W",
     "price" : "58.19",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/thermaltake_smart_700.jpg",
     "specs":["Product Dimensions: 15 x 14.6 x 8.5 cm",
@@ -269,7 +269,7 @@
   {
     "type": "Power Supplies",
     "brand" : "Be Quiet",
-    "name": "Be Quiet Straight Power 11 Power Supply, Black 750W",
+    "name": "Be Quiet 750W",
     "price" : "117.34",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/bequite_ps.jpg",
     "specs":["Product Dimensions: 17 x 15 x 8.6 cm",
@@ -282,7 +282,7 @@
   {
     "type": "Power Supplies",
     "brand" : "Mars Gaming",
-    "name": "Mars Gaming MPB550, PC power supply 550W, 80Plus bronze 230V, silent",
+    "name": "MPB550 550W",
     "price" : "34.34",
     "img": "https://raw.githubusercontent.com/gdemirkol315/hardwarestore/master/public/images/marsgaming.jpg",
     "specs":["Product Dimensions: 15 x 14.5 x 8.5",

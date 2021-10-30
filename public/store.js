@@ -95,8 +95,9 @@ function addItemsToCategory(key, items) {
             itemDiv.className = 'shop-item'
             itemDiv.id = (item.type.replaceAll(' ','') + '-' + item.brand + '-' + item.name).replaceAll(' ','')
             itemDiv.innerHTML = `
-                        <img class="shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
+                        
                         <div class="card card-item">
+                        <img class="card-img-top mx-auto shop-item-image" src="${item.img}" alt="item-picture-${item.name}">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><h1 class="shop-item-title">${item.name}</h1></li>
                                 <li class="list-group-item">
@@ -136,7 +137,7 @@ function technicalDetailsButton(specs, itemId){
 function formatSpecs(specsStr){
     result =''
     specsStr.forEach((spec) => {
-        result = result + '\n' + spec
+        result = result + '<br>' + spec
     })
     return result
 }
