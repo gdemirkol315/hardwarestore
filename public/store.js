@@ -3,35 +3,6 @@ loadItems()
 document.onload = addListeners()
 document.onload = fixHeader()
 
-function fixHeader(){
-    window.onscroll = function() {myFunction()};
-
-    var header = document.getElementsByClassName("main-header")[0];
-    var sticky = header.offsetTop;
-
-    function myFunction() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    }
-
-    window.addEventListener('scroll', function() {
-        var element = document.querySelector('#shopping-cart');
-        var position = element.getBoundingClientRect();
-        var gotoCartButton = document.getElementById("gotocart")
-        // checking whether fully visible
-        if(!(position.top >= 0 && position.bottom <= window.innerHeight) && !(position.top < window.innerHeight && position.bottom >= 0)) {
-            gotoCartButton.style.display = "block";
-        } else {
-            gotoCartButton.style.display = "none";
-        }
-
-    });
-}
-
-
 function addListeners() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -44,7 +15,52 @@ function addListeners() {
         var input = quantityInputs[i]
         input.addEventListener('change', quantityChanged)
     }
+    dynamicGoToChartButton()
+}
 
+
+function fixHeader(){
+    window.onscroll = function() {stickHeader()};
+
+    var header = document.getElementsByClassName("main-header")[0];
+    var sticky = header.offsetTop;
+
+    function stickHeader() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+}
+
+function dynamicGoToChartButton(){
+    window.addEventListener('scroll',function() {
+        checkForGoToCart()
+    });
+    window.addEventListener('click',function() {
+        setTimeout(() => {checkForGoToCart()}, 250);
+    });
+    function checkForGoToCart(){
+        var shoppingCart = document.getElementById("shopping-cart")
+        var gotoCartButton = document.getElementById("gotocart")
+
+        if (isInViewport(shoppingCart)) {
+            gotoCartButton.style.display = "none";
+        } else {
+            gotoCartButton.style.display = "block";
+        }
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    }
 }
 
 function loadItems() {
