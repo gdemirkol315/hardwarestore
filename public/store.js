@@ -75,7 +75,7 @@ function addItemsToCategory(key, items) {
 
     var categoryCollapseBody = document.createElement('div')
     categoryCollapseBody.className = 'card-body category ' +
-        'row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center'
+        'row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left'
     categoryButtonHeading.className = 'card-title'
     categoryButtonHeading.id = key.value.replaceAll(' ','') + '-header'
 
@@ -93,6 +93,7 @@ function addItemsToCategory(key, items) {
         if (item.type == key.value) {
             var itemDiv = document.createElement("div")
             itemDiv.className = 'shop-item'
+            itemDiv.align='center'
             itemDiv.id = (item.type.replaceAll(' ','') + '-' + item.brand + '-' + item.name).replaceAll(' ','')
             itemDiv.innerHTML = `
                         
@@ -107,7 +108,7 @@ function addItemsToCategory(key, items) {
                                     ${technicalDetailsButton(item.specs,itemDiv.id)}  
                                 </li>
                                 <li class="list-group-item">
-                                    <span class="shop-item-price">$ ${Math.round(item.price * 100) / 100}</span>
+                                    <h5 class="shop-item-price">$ ${Math.round(item.price * 100) / 100}</h5>
                                     <button class="btn btn-primary" type="button" 
                                     onclick="addToCartClicked(\'`+itemDiv.id+`\')"
                                     data-toggle="popover" data-content="Item added to shopping cart"
