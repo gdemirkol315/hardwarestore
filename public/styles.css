@@ -146,12 +146,12 @@ body {
     padding: 10px 16px;
     background: #555;
     color: #f1f1f1;
-    z-index: 999;
+    z-index: 1;
 }
 
 #accordion {
     padding: 16px;
-    z-index: 99;
+    z-index: 0;
 }
 
 .sticky {
